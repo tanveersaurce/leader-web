@@ -1,4 +1,12 @@
 const mongoose = require('mongoose');
+const dns = require('dns');
+
+// Fix DNS resolution for MongoDB Atlas SRV lookup on Windows
+try {
+  dns.setServers(['8.8.8.8', '8.8.4.4']);
+} catch (err) {
+  console.log('DNS setServers fallback active');
+}
 
 const connectDB = async () => {
   try {
