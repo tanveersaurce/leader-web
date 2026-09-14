@@ -7,6 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'script',
       includeAssets: ['favicon.ico', 'robots.txt'],
       manifest: {
         name: 'Narendra Modi - One Leader, One Vision',
